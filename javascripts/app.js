@@ -63,6 +63,17 @@ var rover = {
   x: 0,
   y: 0
 }
+function commandRover(commands) {
+  for (let i = 0; i < commands.length; i++){
+    console.log(i);
+    let order = commands[i];
+    if (order === "f") moveForward(rover)
+    if (order === "r") turnRight(rover)
+    if (order === "l") turnLeft(rover)
+  }
+
+}
+
 /*
 let t="otsefsefseft";
 t.length
