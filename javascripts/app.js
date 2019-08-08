@@ -1,9 +1,10 @@
 // Rover Object Goes Here
 // ======================
 
+
 // ======================
 function turnLeft(rover) {
-
+rover.travelLog.push (rover.direction, rover.x, rover.y)
   switch (rover.direction) {
     case "N":
       rover.direction = "W"
@@ -17,11 +18,14 @@ function turnLeft(rover) {
     case "E":
       rover.direction = "N"
       break;
+
   }
+
   console.log("Rover is facing " + rover.direction);
 }
 
 function turnRight(rover) {
+  rover.travelLog.push (rover.direction, rover.x, rover.y)
   console.log("turnRight was called!");
   switch (rover.direction) {
     case "N":
@@ -41,6 +45,7 @@ function turnRight(rover) {
 }
 
 function moveForward(rover) {
+  rover.travelLog.push (rover.direction, rover.x, rover.y)
   console.log("moveForward was called")
   switch (rover.direction) {
     case "N":
@@ -61,7 +66,8 @@ function moveForward(rover) {
 var rover = {
   direction: "N",
   x: 0,
-  y: 0
+  y: 0,
+  travelLog: []
 }
 function commandRover(commands) {
   for (let i = 0; i < commands.length; i++){
@@ -74,11 +80,4 @@ function commandRover(commands) {
 
 }
 
-/*
-let t="otsefsefseft";
-t.length
-for (i -> t.length)
-let val =t[i];
-if val === 'f' move moveForward
-if val === 'e' turnLeft
-*/
+
